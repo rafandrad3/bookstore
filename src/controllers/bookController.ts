@@ -19,6 +19,6 @@ export const addBook = async (req: Request, res: Response) => {
     const book = await bookService.createBook(title, author, price);
     res.status(201).json(book);
   } catch (err: any) {
-    res.status(400).json({ error: err.message });
+    res.status(500).json({ error: err.message });
   }
 };

@@ -23,9 +23,7 @@ export const addUser = async (req: Request, res: Response) => {
     res.status(201).json(user);
   } catch (err: unknown) {
     if (err instanceof Error) {
-      res.status(400).json({ error: err.message });
-    } else {
-      res.status(400).json({ error: 'Erro desconhecido' });
-    }
+      res.status(500).json({ error: err.message });
+    } 
   }
 };

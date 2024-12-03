@@ -3,7 +3,7 @@ import pool from "../config/database";
 export class BookRepository {
   async getAllBooks() {
     try {
-      const { rows } = await pool.query("SELECT * FROM books");
+      const { rows } = await pool.query("SELECT id, title, author, price FROM books");
       return rows;
     } catch (error) {
       console.error("Erro ao buscar livros:", error);

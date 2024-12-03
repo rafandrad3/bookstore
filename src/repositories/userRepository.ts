@@ -19,7 +19,7 @@ export class UserRepository {
 
   async getAllUsers() {
     try {
-      const query = "SELECT * FROM users";
+      const query = "SELECT name, email, passwordhash FROM users";
       const { rows } = await pool.query(query);
       return rows;
     } catch (error) {
